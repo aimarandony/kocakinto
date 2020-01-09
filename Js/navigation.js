@@ -2,6 +2,8 @@ $(document).ready(()=>{
     console.info('Jquery is ready');
 
     $('#nav').hide();
+    $('.template').hide();
+    // $('.template-about').show();
 
     function openNav(estado){
         if(estado){
@@ -50,11 +52,19 @@ $(document).ready(()=>{
       $(".navigation-link-3").hover(function() {
         $(".project-preview").css("background-image","url(./Images/contact02.jpg)");
       });
+
       $(window).scroll(function() {
         var scroll = $(window).scrollTop(),
           dh = $(document).height(),
           wh = $(window).height();
         scrollPercent = (scroll / (dh - wh)) * 100;
         $(".progressbar").css("height", scrollPercent + "%");
+      });
+
+      $('#about').click(()=>{
+        $('.template-about').show('slow');
+      });
+      $('#closeAbout').click(()=>{
+        $('.template-about').hide('fast');
       });
 });
